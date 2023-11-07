@@ -11,8 +11,8 @@ export async function POST(req) {
     // region: 'us-east-1',
     region: 'eu-north-1',
     credentials: {
-      accessKeyId: process.env.AWS_ACCESS_KEY,
-      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+      accessKeyId: process.env.YY_AWS_ACCESS_KEY,
+      secretAccessKey: process.env.YY_AWS_SECRET_ACCESS_KEY,
     },
   });
 
@@ -21,7 +21,7 @@ export async function POST(req) {
   const newName = id + '.' + ext;
 
   const uploadCommand = new PutObjectCommand({
-    Bucket: process.env.BUCKET_NAME,
+    Bucket: process.env.YY_BUCKET_NAME,
     Body: data,
     ACL: 'public-read',
     ContentType: type,
