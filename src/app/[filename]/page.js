@@ -28,7 +28,7 @@ export default function FilePage({params}) {
         setIsTranscribing(false);
 
         setAwsTranscriptionItems(
-          clearTranscriptionItems(transcription?.results?.items)
+          clearTranscriptionItems(transcription?.results?.items ?transcription?.results?.items:[])
         );
       }
     });
